@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.MethodType;
 import java.lang.reflect.Method;
 import java.util.Optional;
 
@@ -72,6 +75,13 @@ public class UserController {
             method1.invoke(obj);
             method2.invoke(obj);
             method3.invoke(obj);
+
+
+            //performance code for method invocation
+            // MethodHandles.Lookup lookup = MethodHandles.lookup();
+            // MethodHandle handle = lookup.findVirtual(MyClass.class, "myMethod", MethodType.methodType(void.class));
+            // handle.invoke(instance);
+
 
         } catch (ClassNotFoundException e) {
             System.err.println("Class not found: " + e.getMessage());

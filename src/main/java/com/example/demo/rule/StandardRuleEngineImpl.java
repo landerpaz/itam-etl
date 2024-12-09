@@ -1,6 +1,6 @@
 package com.example.demo.rule;
 
-public abstract class ComputeEngineRuleImpl implements ComputeEngineRule {
+public class StandardRuleEngineImpl implements StandardRuleEngine {
 
     @Override
     public void basicValidation()  throws Exception {

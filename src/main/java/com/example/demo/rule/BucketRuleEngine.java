@@ -2,6 +2,8 @@ package com.example.demo.rule;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.AssetDetail;
+
 /**
  * This interface is the parent compute engine class for CSP compute engine service types
  * It has all the common functionalities across CSPs
@@ -16,13 +18,13 @@ import org.springframework.stereotype.Service;
  * 
  */
 @Service
-public interface ComputeEngineRule {
-    public void basicValidation() throws Exception;
-    public void relationshipValidation() throws Exception;
-    public void dataMapping() throws Exception;
-    public void basicValidationGcp() throws Exception;
-    public void relationshipValidationGcp() throws Exception;
-    public void dataMappingGcp() throws Exception;
+public interface BucketRuleEngine {
+    public void basicValidation(AssetDetail AssetDetail, String fieldName) throws Exception;
+    public void relationshipValidation(AssetDetail AssetDetail, String fieldName) throws Exception;
+    public void dataMapping(AssetDetail AssetDetail, String fieldName) throws Exception;
+    // public void basicValidationGcp() throws Exception;
+    // public void relationshipValidationGcp() throws Exception;
+    // public void dataMappingGcp() throws Exception;
     // public void basicValidationAws() throws Exception;
     // public void relationshipValidationAws() throws Exception;
     // public void dataMappingAws() throws Exception;
